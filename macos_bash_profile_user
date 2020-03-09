@@ -1,0 +1,16 @@
+export TR_SYM="\[$(echo -e '\xee\x82\xb0')\]"
+
+export PS1_USER_COLOR_FG=222
+export PS1_USER_COLOR_BG=241
+export PS1_HOST_COLOR_FG=250
+export PS1_HOST_COLOR_BG=238
+export PS1_PATH_COLOR_FG=232
+export PS1_PATH_COLOR_BG=111
+
+export PS1_USER="\[$(tput setaf $PS1_USER_COLOR_FG)\]\[$(tput setab $PS1_USER_COLOR_BG)\]\[$(tput bold)\] \u\[$(tput sgr0)\]"
+export PS1_USERHOST="\[$(tput setaf $PS1_USER_COLOR_BG)\]\[$(tput setab $PS1_HOST_COLOR_BG)\]$TR_SYM\[$(tput sgr0)\]"
+export PS1_HOST="\[$(tput setaf $PS1_HOST_COLOR_FG)\]\[$(tput setab $PS1_HOST_COLOR_BG)\] \h\[$(tput sgr0)\]"
+export PS1_HOSTPATH="\[$(tput setaf $PS1_HOST_COLOR_BG)\]\[$(tput setab $PS1_PATH_COLOR_BG)\]$TR_SYM\[$(tput sgr0)\]"
+export PS1_PATH="\[$(tput setaf $PS1_PATH_COLOR_FG)\]\[$(tput setab $PS1_PATH_COLOR_BG)\] \w\[$(tput sgr0)\]"
+export PS1_PATHPROMPT="\[$(tput setaf $PS1_PATH_COLOR_BG)\]\[$(tput setab 0)\]$TR_SYM\[$(tput sgr0)\]"
+export PS1="$PS1_USER$PS1_USERHOST$PS1_HOST$PS1_HOSTPATH$PS1_PATH$PS1_PATHPROMPT "
